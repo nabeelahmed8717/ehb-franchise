@@ -51,6 +51,9 @@ body{
 
 .wrapper-layout-outlet{
   padding: 20px;
+  min-height: 70vh;
+  background-color: #ffffff;
+  border-radius: 15px;
   @media (max-width: 768px) {
   padding: 0;
   padding-bottom: 60px;

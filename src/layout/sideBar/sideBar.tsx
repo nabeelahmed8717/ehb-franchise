@@ -1,6 +1,6 @@
 import React from 'react'
 import "./sideBar.scss"
-import { Menu } from 'antd';
+import { Avatar, Menu } from 'antd';
 import {
   DashboardOutlined,
   UserOutlined,
@@ -52,9 +52,9 @@ const SideBar = () => {
       type,
     } as MenuItem;
   }
-  
+
   const items: MenuItem[] = [
-    getItem(<div onClick={() => navigate('./home')}>Dashboard</div>, '1', <PieChartOutlined />),  
+    getItem(<div onClick={() => navigate('./home')}>Dashboard</div>, '1', <PieChartOutlined />),
     getItem(<div onClick={() => navigate('./manage-franchise')}>Manage Franchise</div>, '6', <img src={settingsIcon} width={15} height={15} alt="" />),
     getItem(<div onClick={() => navigate('./packages')} >Packages</div>, '7', <img src={packagesIcon} width={15} height={15} alt="" />),
     getItem(<div onClick={() => navigate('./marketing')}>Marketing</div>, '8', <img src={marketingIcon} width={15} height={15} alt="" />),
@@ -67,14 +67,22 @@ const SideBar = () => {
     <div className='main-sidebar-wrapper'>
       <div className="logo-main-area">
         <h3>EHB</h3>
-        <p>Sellers Dashboard</p>
+        <p>EHB Franchises</p>
       </div>
+      <div className="user-utils-wrapper">
+       <div className="user-utils-main-inner">
+       <Avatar size={64} icon={<UserOutlined />} />
+       <h3>Apex Limited</h3>
+       </div> 
+
       <Menu
         defaultSelectedKeys={['1']}
         mode="inline"
         theme="light"
         items={items}
       />
+      </div>
+      
     </div>
   )
 }
