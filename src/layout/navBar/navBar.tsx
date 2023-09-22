@@ -178,11 +178,11 @@ const NavBar = () => {
     return (
         <div
             // className={classToRender}
-            className={`main-header-wrapper d-flex justify-between align-center ${visible ? "anim-high-to-low" : "anim-low-to-high"}`}
+            className={`main-header-wrapper d-flex justify-between align-center ${isMobile && visible ? "anim-high-to-low" : "anim-low-to-high"}`}
             style={{ top: visible ? 0 : '-100px', }}
         >
             <div className="brand-logo">
-                {/* <p style={{ color: "rgb(72 72 72)" }} ><strong>EMO</strong> <br /> <span style={{ fontSize: "11px", color: "rgb(80 80 80)" }}>( Easy Management Office )</span></p> */}
+                <p style={{ color: "rgb(72 72 72)" }} ><strong>EHB</strong> <br /> <span style={{ fontSize: "11px", color: "rgb(80 80 80)" }}>Franchise</span></p>
             </div>
             {isAuthenticated ?
                 <div className="nav-menu d-flex align-items-center">
