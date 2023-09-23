@@ -81,11 +81,11 @@ const MainLayout = () => {
                             <img src={packagesIcon} width={22} height={21} alt="" />
                             <div>packages</div>
                         </div>
-                        <div className="nav-icons-box" onClick={() => navigate('./add-product')}>
+                        <div className="nav-icons-box" onClick={() => navigate('./users-quries')}>
                             <img src={questionIcon} width={22} height={22} alt="" />
                             <div>Quries</div>
                         </div>
-                        <div className="nav-icons-box" onClick={() => navigate('./add-product')}>
+                        <div className="nav-icons-box" onClick={() => navigate('./home')}>
                             <img src={analysisIcon} width={22} height={22} alt="" />
                             <div>Reports</div>
                         </div>

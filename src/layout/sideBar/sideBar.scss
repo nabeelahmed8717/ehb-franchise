@@ -68,6 +68,7 @@
             font-weight: 500;
             opacity: 0.6;
             margin-bottom: 10px;
+            background-color: transparent  !important;
 
             &:hover {
                 opacity: 1;
@@ -75,9 +76,10 @@
         }
 
         .ant-menu-light .ant-menu-item-selected {
-            background-color: #F1F1F1;
+            background-color: #f1f1f100 !important;
             opacity: 1;
             color: #000;
+            font-weight: 700;
 
         }
 

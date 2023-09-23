@@ -40,4 +40,26 @@
     .wrapper-users-table {
         margin-top: 40px;
     }
+
+}
+
+.add-user-form-wrapper {
+    margin-top: 20px;
+    max-height: 50vh;
+    overflow: scroll;
+    padding: 5px;
+
+    &::-webkit-scrollbar {
+        width: 10px;
+        height: 0px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: #e3e3e3;
+        border-radius: 20px;
+    }
+}
+
+.ant-select-item-option-selected {
+    background-color: #f4f4f4 !important;
 }

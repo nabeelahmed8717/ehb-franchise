@@ -38,6 +38,7 @@ const Chat = Loadable(lazy(() => import("./pages/chat")));
 const ManageFranchise = Loadable(lazy(() => import("./pages/manageFranchise")));
 const Packages = Loadable(lazy(() => import("./pages/sqPackages")));
 const ManageUsers = Loadable(lazy(() => import("./pages/manageUsers")));
+const UsersQuries = Loadable(lazy(() => import("./pages/usersQuries")));
 
 const Marketing = Loadable(lazy(() => import("./pages/marketing")));
 
@@ -75,6 +76,10 @@ export const routes: any = [
       {
         path: "manage-users",
         element: <ManageUsers />,
+      },
+      {
+        path: "users-quries",
+        element: <UsersQuries />,
       },
       {
         path: "marketing",

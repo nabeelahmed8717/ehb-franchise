@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import "./manageUsers.scss"
-import { Avatar, Button, Dropdown, Image, Input, MenuProps, Space, Table } from 'antd'
+import { Avatar, Button, Col, Dropdown, Form, Image, Input, MenuProps, Modal, Row, Select, Space, Table } from 'antd'
 import { ColumnsType } from 'antd/es/table';
 
 import userOne from "../../assets/raw/users/u1.png"
@@ -12,6 +12,7 @@ import viewIcon from "../../assets/icons/view.svg"
 import editIcon from "../../assets/icons/edit-pencil.svg"
 import deleteIcon from "../../assets/icons/delete.svg"
 import dotsIcon from "../../assets/icons/dots.svg"
+import TextArea from 'antd/es/input/TextArea';
 
 const ManageUsers = () => {
     const items: MenuProps['items'] = [
@@ -139,6 +140,7 @@ const ManageUsers = () => {
     ];
 
     const [searchText, setSearchText] = useState('');
+    const [isAddUserModalOpen, setIsAddUserModalOpen] = useState(false)
 
     const handleSearch = (e: any) => {
         setSearchText(e.target.value);
@@ -153,6 +155,20 @@ const ManageUsers = () => {
         )
     );
 
+    const onFinish = (values: any) => {
+        console.log('Success:', values);
+    };
+    const onFinishFailed = (errorInfo: any) => {
+        console.log('Failed:', errorInfo);
+    };
+
+
+
+
+    const handleChange = (value: string) => {
+        console.log(`selected ${value}`);
+    };
+
     return (
         <div className='manage-users-main bx-bg--white border-repel card-shadow'>
             <div className="common-head-wrapper-title">
@@ -163,7 +179,7 @@ const ManageUsers = () => {
             </div>
             <div className='inset-wrapper'>
                 <Input className='search-wrapper' onChange={handleSearch} placeholder="Search..." suffix={<img width={16} height={16} src={searchIcon} alt="" />} />
-                <Button className='add-user-button'>Add User</Button>
+                <Button className='add-user-button' onClick={() => setIsAddUserModalOpen(true)}>Add User</Button>
             </div>
 
 
@@ -175,6 +191,106 @@ const ManageUsers = () => {
                     scroll={{ x: "max-content" }}
                 />
             </div>
+
+
+            <Modal title="Add user" open={isAddUserModalOpen} footer={false} onOk={() => setIsAddUserModalOpen(false)} onCancel={() => setIsAddUserModalOpen(false)}>
+                <Form
+                    name="basic"
+                    initialValues={{ remember: true }}
+                    onFinish={onFinish}
+                    onFinishFailed={onFinishFailed}
+                    // autoComplete="off"
+                    layout="vertical"
+                    rootClassName='global-form'>
+                    <div className="add-user-form-wrapper">
+
+                        <Row gutter={[20, 0]}>
+                            <Col xs={24} sm={24} md={24} lg={24}>
+                                <Form.Item
+                                    label="User name"
+                                    name="userName"
+                                    rules={[{ required: true, message: 'Required field' }]}
+                                >
+                                    <Input placeholder="Type here" style={{ width: '100%', height: '45px' }} />
+                                </Form.Item>
+                            </Col>
+                            <Col xs={24} sm={24} md={24} lg={24}>
+                                <Form.Item
+                                    label="Last Name"
+                                    name="lastName"
+                                    rules={[{ required: true, message: 'Required field' }]}
+                                >
+                                    <Input placeholder="Type here" style={{ width: '100%', height: '45px' }} />
+                                </Form.Item>
+                            </Col>
+                            <Col xs={24} sm={24} md={24} lg={24}>
+                                <Form.Item
+                                    label="Email"
+                                    name="email"
+                                    rules={[{ required: true, message: 'Required field' }]}
+                                >
+                                    <Input placeholder="Type here" style={{ width: '100%', height: '45px' }} />
+                                </Form.Item>
+                            </Col>
+                            <Col xs={24} sm={24} md={24} lg={24}>
+                                <Form.Item
+                                    label="User Role"
+                                    name="userRole"
+                                    rules={[{ required: true, message: 'Required field' }]}
+                                >
+                                    <Select
+                                        style={{ width: '100%', height: '45px' }}
+                                        onChange={handleChange}
+                                        options={[
+                                            { value: 'manager', label: 'Manager' },
+                                            { value: 'collaborator', label: 'Collaborator' },
+                                            { value: 'employee', label: 'Employee' },
+                                        ]}
+                                    />
+                                </Form.Item>
+                            </Col>
+                            <Col xs={24} sm={24} md={24} lg={24}>
+                                <Form.Item
+                                    label="Access to features"
+                                    name="acessToFratures"
+                                    rules={[{ required: false, message: 'Required field' }]}
+                                >
+                                    <Select
+                                        mode="multiple"
+                                        allowClear
+                                        style={{ width: '100%' }}
+                                        placeholder="Please select"
+                                        onChange={handleChange}
+                                        options={[
+                                            { value: 'able to view payments', label: 'able to view payments' },
+                                            { value: 'add users', label: 'add users' },
+                                            { value: 'reply to users quries', label: 'reply to users quries' },
+                                            { value: 'marketing', label: 'marketing' },
+                                            { value: 'view reports', label: 'view reports' },
+                                        ]}
+                                    />
+                                </Form.Item>
+                            </Col>
+                            <Col xs={24} sm={24} md={24} lg={24}>
+                                <Form.Item
+                                    label="Invitation message"
+                                    name="message"
+                                    rules={[{ required: false, message: 'Required field' }]}
+                                >
+                                    <TextArea rows={4} placeholder="Type message (optional)" />
+                                </Form.Item>
+                            </Col>
+                        </Row>
+
+                    </div>
+                    <div className="d-flex" style={{ gap: "10px", justifyContent: "flex-end", padding: "10px" }}>
+                        <Button className="global-btn-cancel d-btn">Cancel</Button>
+                        <Button className="global-btn d-btn">Add User</Button>
+                    </div>
+                </Form>
+            </Modal>
+
+
         </div>
     )
 }
