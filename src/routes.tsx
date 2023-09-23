@@ -37,6 +37,7 @@ const Chat = Loadable(lazy(() => import("./pages/chat")));
 
 const ManageFranchise = Loadable(lazy(() => import("./pages/manageFranchise")));
 const Packages = Loadable(lazy(() => import("./pages/sqPackages")));
+const ManageUsers = Loadable(lazy(() => import("./pages/manageUsers")));
 
 const Marketing = Loadable(lazy(() => import("./pages/marketing")));
 
@@ -70,6 +71,10 @@ export const routes: any = [
       {
         path: "packages",
         element: <Packages />,
+      },
+      {
+        path: "manage-users",
+        element: <ManageUsers />,
       },
       {
         path: "marketing",

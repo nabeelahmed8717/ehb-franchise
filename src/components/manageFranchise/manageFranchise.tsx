@@ -2,7 +2,7 @@ import React from 'react'
 import './manageFranchise.scss'
 import { Image, Tabs, TabsProps } from 'antd'
 import starIcon from "../../assets/icons/fi-sr-star.svg"
-import bgWrapp from "../../assets/raw/bbg.png"
+import bgWrapp from "../../assets/raw/apex-w.png"
 import smileShop from "../../assets/raw/icon.jpg"
 import BasicInformation from './profileTabs/basicInformation'
 
@@ -20,7 +20,7 @@ const ManageFranchise = () => {
         },
         {
           key: '2',
-          label: 'Privacy',
+          label: 'Security',
           children: 'Content of Tab Pane 2',
         },
         {
@@ -45,7 +45,7 @@ const ManageFranchise = () => {
                     </div>
                     <div className="store-details">
                         <div className="main-details">
-                            <h2>Smile Shop</h2>
+                            <h2>Apex Solutions</h2>
                             <p>Store Level : <span>09</span></p>
                         </div>
                         <div className="profile-ratings">
@@ -55,7 +55,6 @@ const ManageFranchise = () => {
                     </div>
                 </div>
             </div>
-
 
             <div className="wrapper-oth-content">
             <Tabs defaultActiveKey="1" items={items} onChange={onChange} />

@@ -549,14 +549,15 @@ input {
 
 .badge-common {
   background-color: #27ae60;
-  padding: 2px 5px;
-  border-radius: 3px;
+  padding: 3px 15px;
+  border-radius: 30px;
   font-size: 12px;
   font-weight: 500;
   display: flex;
   align-items: center;
   justify-content: center;
   white-space: nowrap;
+  width: fit-content;
 }
 
 .badge-processing {
@@ -570,6 +571,10 @@ input {
 }
 
 .badge-delivered {
+  background-color: #27ae6029;
+  color: #27ae60;
+}
+.badge-approved {
   background-color: #27ae6029;
   color: #27ae60;
 }

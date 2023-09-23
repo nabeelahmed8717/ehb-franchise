@@ -17,6 +17,7 @@ import marketingIcon from "../../assets/icons/marketing.svg"
 import verificationIcon from "../../assets/icons/check-circle.svg"
 import analysisIcon from "../../assets/icons/analysis.svg"
 import guideIcon from "../../assets/icons/memo-pad.svg"
+import manageUsersIcon from "../../assets/icons/user-gear.svg"
 
 import {
   AppstoreOutlined,
@@ -58,6 +59,7 @@ const SideBar = () => {
     getItem(<div onClick={() => navigate('./manage-franchise')}>Manage Franchise</div>, '6', <img src={settingsIcon} width={15} height={15} alt="" />),
     getItem(<div onClick={() => navigate('./packages')} >Packages</div>, '7', <img src={packagesIcon} width={15} height={15} alt="" />),
     getItem(<div onClick={() => navigate('./marketing')}>Marketing</div>, '8', <img src={marketingIcon} width={15} height={15} alt="" />),
+    getItem(<div onClick={() => navigate('./manage-users')}>Manage Users</div>, '9', <img src={manageUsersIcon} width={15} height={15} alt="" />),
     getItem(<div>Reports</div>, '10', <img src={analysisIcon} width={15} height={15} alt="" />),
     getItem(<div>User Guides</div>, '11', <img src={guideIcon} width={15} height={15} alt="" />),
 

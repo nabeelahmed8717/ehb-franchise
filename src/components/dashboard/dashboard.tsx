@@ -103,7 +103,7 @@ const Dashboard = () => {
                   <Row gutter={[0, 10]}>
                     <Col lg={18} md={18} sm={24} xs={24}>
                       <div className='earning-content'>
-                        <p>Your Earnings this month</p>
+                        <p>Your this month Earnings</p>
                         <h2>& <span>2,647.34</span></h2>
                       </div>
                     </Col>

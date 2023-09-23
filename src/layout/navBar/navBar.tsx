@@ -25,6 +25,7 @@ import marketingIcon from "../../assets/icons/marketing.svg"
 import verificationIcon from "../../assets/icons/check-circle.svg"
 import analysisIcon from "../../assets/icons/analysis.svg"
 import guideIcon from "../../assets/icons/memo-pad.svg"
+import manageUsersIcon from "../../assets/icons/user-gear.svg"
 
 import Switch from "../../assets/icons/fi-rr-refresh.svg"
 import notificationIcon from "../../assets/icons/notification.svg"
@@ -91,9 +92,9 @@ const NavBar = () => {
        
         {
             key: '2',
-            label: 'Store Settings',
-            icon: settings,
-            link: './store-settings'
+            label: 'Manage Franchise',
+            icon: settingsIcon,
+            link: './manage-franchise'
         },
         {
             key: '2',
@@ -109,9 +110,9 @@ const NavBar = () => {
         },
         {
             key: '9',
-            label: "Product Verification",
-            icon: verificationIcon,
-            link: './product-verification'
+            label: "Manage Users",
+            icon: manageUsersIcon,
+            link: './manage-users'
         },
         {
             key: '3',
@@ -120,15 +121,15 @@ const NavBar = () => {
             link: './home'
         },
         {
-            key: '5',
-            label: 'Sign out',
-            icon: signOut,
-            link: './home'
-        },
-        {
             key: '1',
             label: 'Upload KYC',
             icon: document,
+            link: './home'
+        },
+        {
+            key: '5',
+            label: 'Sign out',
+            icon: signOut,
             link: './home'
         },
     ]

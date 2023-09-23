@@ -25,8 +25,8 @@ const BasicInformation = () => {
         <Row gutter={20}>
           <Col xs={24} sm={24} md={12} lg={12}>
             <Form.Item
-              label="Store Title"
-              name="storeTitle"
+              label="Franchise Title"
+              name="franchiseTitle"
               rules={[{ required: true, message: 'Required field' }]}
             >
               <Input placeholder="Type here" style={{ width: '100%', height: '40px' }} />
@@ -34,8 +34,8 @@ const BasicInformation = () => {
           </Col>
           <Col xs={24} sm={24} md={12} lg={12}>
             <Form.Item
-              label="Store Availability"
-              name="storeAvalibility"
+              label="Franchise Availability"
+              name="franchiseAvalibility"
               rules={[{ required: true, message: 'Required field' }]}
             >
               <Input placeholder="Type here" style={{ width: '100%', height: '40px' }} />
@@ -43,8 +43,8 @@ const BasicInformation = () => {
           </Col>
           <Col xs={24} sm={24} md={12} lg={12}>
             <Form.Item
-              label="Store Discription"
-              name="storeDiscription"
+              label="Franchise Discription"
+              name="franchiseDiscription"
               rules={[{ required: true, message: 'Required field' }]}
             >
               <TextArea rows={4} placeholder="Type here" maxLength={6} />
@@ -52,14 +52,24 @@ const BasicInformation = () => {
           </Col>
           <Col xs={24} sm={24} md={12} lg={12}>
             <Form.Item
-              label="Store Contact No"
-              name="storeContactNo"
+              label="Franchise Contact No"
+              name="franchiseContactNo"
               rules={[{ required: true, message: 'Required field' }]}
             >
               <Input placeholder="Type here" style={{ width: '100%', height: '40px' }} />
             </Form.Item>
           </Col>
-          <Button htmlType='submit' className='form-button'>Update</Button>
+          <Col xs={24} sm={24} md={12} lg={12}>
+            <Form.Item
+              label="Franchise Type"
+              name="franchiseContactNo"
+              rules={[{ required: true, message: 'Required field' }]}
+            >
+              <Input placeholder="Type here" style={{ width: '100%', height: '40px' }} />
+            </Form.Item>
+          </Col>
+          <Col span={24}>
+          <Button htmlType='submit' className='form-button'>Update</Button></Col>
         </Row>
       </Form>
     </div>

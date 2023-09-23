@@ -13,8 +13,9 @@ import settingsIcon from "../assets/icons/settings.svg"
 import packagesIcon from "../assets/icons/packages.svg"
 import marketingIcon from "../assets/icons/marketing.svg"
 import verificationIcon from "../assets/icons/check-circle.svg"
-import analysisIcon from "../assets/icons/analysis.svg"
+import analysisIcon from "../assets/icons/chart-line-up-b.svg"
 import guideIcon from "../assets/icons/memo-pad.svg"
+import questionIcon from "../assets/icons/question-square.svg"
 
 
 import NavBar from './navBar/navBar'
@@ -76,27 +77,18 @@ const MainLayout = () => {
                             <img src={homeIcon} width={21} height={21} alt="" />
                             <div>Home</div>
                         </div>
-                        <div className="nav-icons-box" onClick={() => navigate('./my-products')}>
-                            <img src={productsIcon} width={22} height={21} alt="" />
-                            <div>My Products</div>
+                        <div className="nav-icons-box" onClick={() => navigate('./packages')}>
+                            <img src={packagesIcon} width={22} height={21} alt="" />
+                            <div>packages</div>
                         </div>
                         <div className="nav-icons-box" onClick={() => navigate('./add-product')}>
-                            <img src={plusIcon} width={30} height={30} alt="" />
-                            <div></div>
+                            <img src={questionIcon} width={22} height={22} alt="" />
+                            <div>Quries</div>
                         </div>
-
-                        <Popover rootClassName='wrapper-orders-nav' content={
-                            <div className='orders-nav-wrapper'>
-                                <p onClick={() => navigate('./orders/pending-orders')} >Pending orders</p>
-                                <p onClick={() => navigate('./orders/completed-orders')} >Confirmed orders</p>
-                                <p onClick={() => navigate('./orders/decline-orders')} >Decline orders</p>
-                            </div>
-                        } title={<span className='light-grey'>Orders</span>} trigger="click">
-                            <div className="nav-icons-box">
-                                <img src={orderIcon} width={21} height={20} alt="" />
-                                <div>Orders</div>
-                            </div>
-                        </Popover>
+                        <div className="nav-icons-box" onClick={() => navigate('./add-product')}>
+                            <img src={analysisIcon} width={22} height={22} alt="" />
+                            <div>Reports</div>
+                        </div>
                         <div className="nav-icons-box" onClick={() => navigate('./home')}>
                             <img src={guideIcon} width={21} height={21} alt="" />
                             <div>Guide</div>

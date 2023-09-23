@@ -1,0 +1,43 @@
+.manage-users-main {
+    .add-user-button {
+        background-color: rgba(142, 68, 173, 0.1490196078);
+        color: #8e44ad;
+        font-size: 15px;
+        font-weight: 600 !important;
+        border: none;
+        border-radius: 21px;
+        padding: 6px 18px;
+        height: auto;
+        margin-top: 10px;
+        transition: 0.3s;
+
+        &:hover {
+            background-color: #8e44ad;
+            color: #fff;
+        }
+    }
+
+    .inset-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: 30px;
+
+        @media (max-width: 768px) {
+            flex-direction: column-reverse;
+            gap: 20px;
+            justify-content: flex-start;
+            align-items: flex-start;
+
+        }
+
+        .search-wrapper {
+            background-color: rgb(255, 255, 255);
+            width: 250px;
+        }
+    }
+
+    .wrapper-users-table {
+        margin-top: 40px;
+    }
+}
