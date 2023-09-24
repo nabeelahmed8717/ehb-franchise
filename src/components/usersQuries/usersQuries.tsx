@@ -1,9 +1,10 @@
-import React from 'react'
+import React, { useState } from 'react'
 import "./usersQuries.scss"
-import { Avatar, Col, Image, Row } from 'antd'
+import { Avatar, Button, Col, Form, Image, Input, Modal, Row } from 'antd'
 import userOne from "../../assets/raw/users/u1.png"
 import userTwo from "../../assets/raw/users/u2.png"
 import userThree from "../../assets/raw/users/u3.png"
+import TextArea from 'antd/es/input/TextArea'
 
 const userQuerieStatus = [
     {
@@ -42,6 +43,17 @@ const userQuerieStatus = [
 ]
 
 const UsersQuries = () => {
+
+    const [isReplyQuerieModalOpen, setIsReplyQuerieModalOpen] = useState(false)
+    const [activeContentCached, setActiveContentCached] = useState<any>({})
+
+    const onFinish = (values: any) => {
+        console.log('Success:', values);
+    };
+    const onFinishFailed = (errorInfo: any) => {
+        console.log('Failed:', errorInfo);
+    };
+
     return (
         <div className='users-quries-main-wrapper bx-bg--white border-repel card-shadow'>
             <div className="common-head-wrapper-title">
@@ -84,10 +96,15 @@ const UsersQuries = () => {
                                     <p className='clamp-text'>{item.querieMessage}</p>
                                 </div>
                                 {
-                                    item.status === "resolved" &&
+                                    item.status === "resolved" ?
                                     <div className='resolved-by'>Resolved By <strong>{item.resolvedBy}</strong></div>
+                                    :
+                                    <Button className='reply-btn' onClick={() => {setIsReplyQuerieModalOpen(true); setActiveContentCached(item)}}>Reply</Button>
                                 }
+                                
                             </div>
+
+
 
                         </Col>
                     ))
@@ -96,6 +113,37 @@ const UsersQuries = () => {
             </Row>
             </div>
 
+
+            <Modal title="Reply" open={isReplyQuerieModalOpen} footer={false} onOk={() => setIsReplyQuerieModalOpen(false)} onCancel={() => setIsReplyQuerieModalOpen(false)}>
+<div style={{fontSize:"15px", marginTop:"30px"}}>Replying to <span style={{color:"#3498db", fontWeight:"600"}}>{activeContentCached?.userName}</span></div>
+                <Form
+                    name="basic"
+                    initialValues={{ remember: true }}
+                    onFinish={onFinish}
+                    onFinishFailed={onFinishFailed}
+                    // autoComplete="off"
+                    layout="vertical"
+                    rootClassName='global-form'>
+                    <div className="post-querie-reply-wrapper">
+                        <Row gutter={[20, 0]}>
+                            <Col xs={24} sm={24} md={24} lg={24}>
+                                <Form.Item
+                                    label=""
+                                    name="reply"
+                                    rules={[{ required: true, message: 'Required field' }]}
+                                >
+                                    <TextArea rows={4} placeholder="Add reply..."/>
+                                </Form.Item>
+                            </Col>
+                        </Row>
+
+                    </div>
+                    <div className="d-flex" style={{ gap: "10px", justifyContent: "flex-end", padding: "10px" }}>
+                        <Button className="global-btn-cancel d-btn" onClick={() => setIsReplyQuerieModalOpen(false)}>Cancel</Button>
+                        <Button className="global-btn d-btn">Post Reply</Button>
+                    </div>
+                </Form>
+            </Modal>
             
         </div>
     )

@@ -143,7 +143,7 @@ const SqPackages = () => {
                                     <div className="icon-wrapper">
                                         <img src={franchisePacIcon} width={20} height={20} alt="" />
                                     </div>
-                                    <h3>{item.level}</h3>
+                                    <h3>{item.label}</h3>
                                     <p>Registered Shops <span>{item.shopRegLimit}</span></p>
                                     <p>Daily order limit <span>{item.orderslimit}</span></p>
                                     <h4>$ {item.price}</h4>
